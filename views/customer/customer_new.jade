@@ -1,0 +1,13 @@
+extends ./../layout
+block main-content
+    h3 #{title}
+    form(id='form', method='POST', action='/customer/post?id=#{customer.id}')
+        label(for='Name') Name
+        input(type='text', id='first_name', name='name', value='#{customer.first_name}')
+        label(for='email') Email
+        input(type='email', id='email', name='email', value='#{customer.email}')
+        label(for='gender') Gender
+        select(id='gender', name='gender')
+            option(value='Male', selected='#{customer.gender}' == 'Male') Male
+            option(value='Female', selected='#{customer.gender}' == 'Female') Female
+        input(type='submit', value='Save')

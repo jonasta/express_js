@@ -1,34 +1,30 @@
-doctype
-html
-    head
-        title #{title}
-        link(rel='stylesheet', href='/style.css')
-    body
-        h3 #{title}
-        a(href='/customer/blank')
-            p Create New
+extends ./../layout
+block main-content
+    h3 #{title}
+    a(href='/customer/blank')
+        p Create New
 
-        table
-            thead
-                tr: teste
-            tbody
+    table
+        thead
+            tr: teste
+        tbody
+            tr
+                th photo
+                th name
+                th email
+                th gender
+                th actions
+                th
+
+            each customer in customers
                 tr
-                    th photo
-                    th name
-                    th email
-                    th gender
-                    th actions
-                    th
-
-                each customer in customers
-                    tr
-                        td
-                            img(src='#{customer.avatar}')
-                        td #{customer.first_name}
-                        td #{customer.email}
-                        td #{customer.gender}
-                        td
-                            a(href='/customer/edit/#{customer.id}')
-                                span(style="margin-right:5px") Edit
-                            a(href='/customer/remove/#{customer.id}')
-                                span remove
+                    td
+                        img(src='#{customer.avatar}')
+                    td #{customer.first_name}
+                    td #{customer.email}
+                    td #{customer.gender}
+                    td
+                        a(href='/customer/edit/#{customer.id}')
+                            span(style="margin-right:5px") Edit
+                        a(href='/customer/delete/#{customer.id}')
+                            span remove

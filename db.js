@@ -245,7 +245,7 @@ exports.getCustomerById = function (id) {
 }
 
 exports.saveCustomer = function (id, customer) {
-  if (id === 'undefined') {
+  if (id == 0) {
     customer.id = customers.length + 1;
     customers.push(customer);
   } else {

@@ -4,7 +4,7 @@ html
         title #{title}
     body
         h3 #{title}
-        form(id='form', method='post', action='/customer/#{customer.id}')
+        form(id='form', method='post', action='/customer/save/#{customer.id}')
             label(for='Name') Name
             input(type='text', id='first_name', name='name', value='#{customer.first_name}')
             label(for='email') Email

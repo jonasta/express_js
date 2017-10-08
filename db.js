@@ -258,3 +258,11 @@ exports.saveCustomer = function (id, customer) {
     }
   }
 }
+
+exports.removeCustomer = function (id) {
+  for (var i = 0; i < customers.length; i++) {
+    if (customers[ i ].id == id) {
+      customers.splice(i, 1);
+    }
+  }
+}

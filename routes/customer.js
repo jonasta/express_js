@@ -19,3 +19,8 @@ exports.save = function (req, res) {
   db.saveCustomer(req.params.id, req.body);
   res.redirect('/customer');
 }
+
+exports.remove = function (req, res) {
+  db.removeCustomer(req.params.id);
+  res.redirect('/customer');
+}

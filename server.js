@@ -18,9 +18,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('/customer', customerRoute.list);
-app.get('/customer/create', customerRoute.create);
-app.get('/customer/:id', customerRoute.edit);
-app.post('/customer/:id', customerRoute.save);
+app.get('/customer/blank', customerRoute.create);
+app.get('/customer/edit/:id', customerRoute.edit);
+app.post('/customer/save/:id', customerRoute.save);
+app.get('/customer/remove/:id', customerRoute.remove);
 
 var port = 4000;
 app.listen(port);

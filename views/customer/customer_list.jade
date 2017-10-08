@@ -2,9 +2,10 @@ doctype
 html
     head
         title #{title}
+        link(rel='stylesheet', href='/style.css')
     body
         h3 #{title}
-        a(href='/customer/create')
+        a(href='/customer/blank')
             p Create New
 
         table
@@ -16,12 +17,18 @@ html
                     th name
                     th email
                     th gender
+                    th actions
+                    th
 
                 each customer in customers
                     tr
                         td
-                            a(href='/customer/#{customer.id}')
-                                img(src='#{customer.avatar}')
+                            img(src='#{customer.avatar}')
                         td #{customer.first_name}
                         td #{customer.email}
                         td #{customer.gender}
+                        td
+                            a(href='/customer/edit/#{customer.id}')
+                                span(style="margin-right:5px") Edit
+                            a(href='/customer/remove/#{customer.id}')
+                                span remove

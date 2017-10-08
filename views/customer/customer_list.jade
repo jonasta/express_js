@@ -1,0 +1,27 @@
+doctype
+html
+    head
+        title #{title}
+    body
+        h3 #{title}
+        a(href='/customer/create')
+            p Create New
+
+        table
+            thead
+                tr: teste
+            tbody
+                tr
+                    th photo
+                    th name
+                    th email
+                    th gender
+
+                each customer in customers
+                    tr
+                        td
+                            a(href='/customer/#{customer.id}')
+                                img(src='#{customer.avatar}')
+                        td #{customer.first_name}
+                        td #{customer.email}
+                        td #{customer.gender}

@@ -14,17 +14,16 @@ block main-content
                 th email
                 th gender
                 th actions
-                th
 
             each customer in customers
                 tr
                     td
-                        img(src='#{customer.avatar}')
+                        img(src='./pictures/#{customer.avatar}')
                     td #{customer.first_name}
                     td #{customer.email}
                     td #{customer.gender}
                     td
                         a(href='/customer/edit/#{customer.id}')
-                            span(style="margin-right:5px") Edit
-                        a(href='/customer/delete/#{customer.id}')
-                            span remove
+                            button(style="right-margin:5px") Edit
+                        form(id='form', method='POST', action='/customer/delete/#{customer.id}?_method=DELETE' style="display:inline")
+                            button(type="submit") remove

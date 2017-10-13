@@ -251,9 +251,10 @@ exports.saveCustomer = function (id, customer) {
   } else {
     for (var i = 0; i < customers.length; i++) {
       if (customers[ i ].id == id) {
-        customers[ i ].first_name = customer.name;
+        customers[ i ].first_name = customer.first_name;
         customers[ i ].email = customer.email;
         customers[ i ].gender = customer.gender;
+        customers[ i ].avatar = customer.avatar;
       }
     }
   }

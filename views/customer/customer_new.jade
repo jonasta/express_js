@@ -1,13 +1,15 @@
 extends ./../layout
 block main-content
     h3 #{title}
-    form(id='form', method='POST', action='/customer/post?id=#{customer.id}')
-        label(for='Name') Name
-        input(type='text', id='first_name', name='name', value='#{customer.first_name}')
+    form(id='form', method='POST', action='/customer/post?id=#{customer.id}', enctype='multipart/form-data')
+        label(for='first_name') Name
+        input(type='text', id='first_name', name='first_name', value='#{customer.first_name}')
         label(for='email') Email
         input(type='email', id='email', name='email', value='#{customer.email}')
         label(for='gender') Gender
         select(id='gender', name='gender')
             option(value='Male', selected='#{customer.gender}' == 'Male') Male
             option(value='Female', selected='#{customer.gender}' == 'Female') Female
+        label(for='avatar') Photo
+        input(type='file', id='avatar', name='avatar', value='#{customer.avatar}')
         input(type='submit', value='Save')
